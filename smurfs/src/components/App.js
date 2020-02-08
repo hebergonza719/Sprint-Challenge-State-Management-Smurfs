@@ -11,6 +11,8 @@ import thunk from "redux-thunk";
 
 import DisplaySmurf from './DisplaySmurfs';
 
+import AddSmurf from "./AddSmurf";
+
 const store = createStore(reducer, applyMiddleware(thunk));
 
 class App extends Component {
@@ -21,6 +23,7 @@ class App extends Component {
           <h1>SMURFS! 2.0 W/ Redux</h1>
           <h3>Welcome to the Smurf Village</h3>
           <h3>These are the villagers:</h3>
+          <AddSmurf />
           <DisplaySmurf />
         </div>
       </Provider>

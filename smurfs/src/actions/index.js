@@ -9,4 +9,7 @@ export const getData = () => dispatch => {
       console.log("this is res.data", res.data);
       dispatch({ type: FETCH_DATA, payload: res.data })
     })
+    .catch(err => {
+      console.error("error fetching data from api. err: ", err);
+    });
 };
