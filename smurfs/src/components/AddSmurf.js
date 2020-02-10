@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
+import { connect } from "react-redux";
+
+import { getData } from "../actions";
+
 import axios from "axios";
 
-const AddSmurf = () => {
+const AddSmurf = props => {
 
   const [newSmurf, setNewSmurf] = useState({
     name: "",
@@ -31,7 +35,7 @@ const AddSmurf = () => {
       })
       .catch(err => {console.log("this is error", err.response)}
       );
-    clearForm();      
+    clearForm();
   };
 
   console.log("this is name value", newSmurf.name);
@@ -69,4 +73,13 @@ const AddSmurf = () => {
   )
 };
 
-export default AddSmurf;
+const mapStateToProps = state => {
+  return {
+
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getData }
+)(AddSmurf);

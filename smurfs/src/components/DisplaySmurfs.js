@@ -8,11 +8,11 @@ import { getData } from "../actions";
 
 const DisplaySmurfs = props => {
 
-  const { smurfs, getData } = props;
+  const { getData } = props;
 
   useEffect(() => {
     getData();
-  }, [smurfs]);
+  }, [props.smurfs]);
 
   console.log("DisplaySmurf: props.smurfs", props.smurfs);
   

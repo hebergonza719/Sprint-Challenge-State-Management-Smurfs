@@ -23,10 +23,41 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+
+It eliminates prop drilling. It allows access and manipulation of a state across all levels of the application.
+
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+
+Actions – they send information from your application to your store.
+
+Reducers - they handle how the state will change based on actions. 
+
+Store – it holds and handles the application state, it brings actions and reducers together.
+	
+Store is the single source of truth because it is the only place where state can be used to change your data.
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+
+Application state is data that can be used throughout all the application, any component has access to it. Component state is usually used in the component level, no need to manipulate said state outside of the component.
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+
+It is a middleware that allows us to make action creators that return a function instead of an action. 
+These actions creators can be used in many different ways. It can be used to delay a dispatch, or to dispatch only if a specific condition is met.
+
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+
+I prefer using redux because it easier for me to understand. There is a clear process to follow step by step, and it includes application level state and reducers.
+
 
 ## Project Set Up
 
