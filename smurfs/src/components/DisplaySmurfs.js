@@ -10,9 +10,11 @@ const DisplaySmurfs = props => {
 
   const { getData } = props;
 
+  // getData();
+
   useEffect(() => {
     getData();
-  }, [props.smurfs]);
+  }, []);
 
   console.log("DisplaySmurf: props.smurfs", props.smurfs);
   

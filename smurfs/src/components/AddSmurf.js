@@ -32,6 +32,7 @@ const AddSmurf = props => {
       .post("http://localhost:3333/smurfs", newSmurf)
       .then(res => {
         console.log("this is the response: ", res)
+        props.getData();
       })
       .catch(err => {console.log("this is error", err.response)}
       );

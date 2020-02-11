@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import { createStore, applyMiddleware } from 'redux';
+// import { createStore, applyMiddleware } from 'redux';
 
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 
-import { smurfReducer as reducer} from '../reducers/smurfReducer';
+// import { smurfReducer as reducer} from '../reducers/smurfReducer';
 
-import thunk from "redux-thunk";
+// import thunk from "redux-thunk";
 
 import DisplaySmurf from './DisplaySmurfs';
 
 import AddSmurf from "./AddSmurf";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+import { getData } from "../actions";
+
+import { connect } from "react-redux";
+
+// const store = createStore(reducer, applyMiddleware(thunk));
 
 class App extends Component {
+
   render() {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <div className="App">
           <h1>SMURFS! 2.0 W/ Redux</h1>
           <h3>Welcome to the Smurf Village</h3>
@@ -26,9 +31,18 @@ class App extends Component {
           <AddSmurf />
           <DisplaySmurf />
         </div>
-      </Provider>
+      // </Provider>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    smurfs: state.smurfs
+  };
+};
+
+export default connect (
+  mapStateToProps,
+  { getData }
+)(App);
